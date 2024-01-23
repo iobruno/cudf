@@ -554,6 +554,8 @@ rmm::device_uvector<size_type> hash_node_type_with_field_name(device_span<Symbol
     cuco::empty_key{empty_node_index_sentinel},
     d_equal,
     cuco::linear_probing<1, hasher_type>{d_hasher},
+                                     {},
+                                     {},
     hash_table_allocator_type{default_allocator<char>{}, stream},
     stream.value()};
   key_set.insert_if_async(iter,
@@ -741,6 +743,8 @@ std::pair<rmm::device_uvector<size_type>, rmm::device_uvector<size_type>> hash_n
                                   cuco::empty_key<cudf::size_type>{empty_node_index_sentinel},
                                   d_equal,
                                   cuco::linear_probing<1, hasher_type>{d_hashed_cache},
+                                  {},
+                                  {},
                                   hash_table_allocator_type{default_allocator<char>{}, stream},
                                   stream.value()};
 

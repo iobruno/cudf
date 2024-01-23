@@ -146,6 +146,8 @@ cudf::size_type distinct_count(table_view const& keys,
                        cuco::empty_key<cudf::size_type>{-1},
                        row_equal,
                        cuco::linear_probing<1, hasher_type>{hash_key},
+                       {},
+                       {},
                        detail::hash_table_allocator_type{default_allocator<char>{}, stream},
                        stream.value()};
 

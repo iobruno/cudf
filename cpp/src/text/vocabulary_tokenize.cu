@@ -150,6 +150,8 @@ tokenize_vocabulary::tokenize_vocabulary(cudf::strings_column_view const& input,
     cuco::empty_value{-1},
     detail::vocab_equal{*d_vocabulary},
     detail::probe_scheme{detail::vocab_hasher{*d_vocabulary}},
+    cuco::thread_scope_device,
+    cuco::storage<1>{},
     detail::hash_table_allocator_type{default_allocator<char>{}, stream},
     stream.value());
 

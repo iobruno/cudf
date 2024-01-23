@@ -231,6 +231,8 @@ rmm::device_uvector<bool> contains(table_view const& haystack,
         cuco::empty_key{lhs_index_type{-1}},
         d_equal,
         probing_scheme,
+        {},
+        {},
         detail::hash_table_allocator_type{default_allocator<lhs_index_type>{}, stream},
         stream.value()};
 
