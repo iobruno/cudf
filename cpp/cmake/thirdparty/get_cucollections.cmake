@@ -14,7 +14,7 @@
 
 # This function finds cuCollections and performs any additional configuration.
 function(find_and_configure_cucollections)
-    rapids_cpm_find(
+  rapids_cpm_find(
     cuco 0.0.1
     GLOBAL_TARGETS cuco::cuco
     CPM_ARGS
