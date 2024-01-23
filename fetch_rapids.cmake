@@ -12,8 +12,6 @@
 # the License.
 # =============================================================================
 if(NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/CUDF_RAPIDS.cmake)
-  set(rapids-cmake-repo PointKernel/rapids-cmake)
-  set(rapids-cmake-branch cuco-experimental)
   file(DOWNLOAD https://raw.githubusercontent.com/rapidsai/rapids-cmake/branch-24.04/RAPIDS.cmake
        ${CMAKE_CURRENT_BINARY_DIR}/CUDF_RAPIDS.cmake
   )
